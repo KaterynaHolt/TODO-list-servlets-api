@@ -3,39 +3,62 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.todo.app</groupId>
-  <artifactId>TODO-list-servlets-api</artifactId>
+  <artifactId>todo-list-servlets-api</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
 
-  <name>TODO-list-servlets-api Maven Webapp</name>
+  <name>todo-list-servlets-api Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <java.version>11</java.version>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jakarta.version>5.0.0</jakarta.version>
+    <javax.version>4.0.1</javax.version>
+    <junit.version>3.8.1</junit.version>
+    <mockito.version>5.1.1</mockito.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <version>5.0.0</version>
+      <version>${jakarta.version}</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
+      <version>${javax.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>5.1.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>RELEASE</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
   <build>
-    <finalName>TODO-list-servlets-api</finalName>
+    <finalName>todo-list-servlets-api</finalName>
   </build>
 </project>
