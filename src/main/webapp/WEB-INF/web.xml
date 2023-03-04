@@ -4,15 +4,5 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-    <servlet-name>ToDoServlet</servlet-name>
-    <servlet-class>
-      ToDoServlet
-    </servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>ToDoServlet</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
 </web-app>
+

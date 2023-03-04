@@ -6,15 +6,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
 import org.mockito.MockitoAnnotations;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import static org.mockito.Mockito.*;
+
 public class ToDoServletTest {
-    @Spy private ToDoServlet servlet;
-    @Mock private ServletConfig servletConfig;
-    @Mock private HttpServletRequest request;
-    @Mock private HttpServletResponse response;
+    @Spy
+    private ToDoServlet servlet;
+    @Mock
+    private ServletConfig servletConfig;
+    @Mock
+    private HttpServletRequest request;
+    @Mock
+    private HttpServletResponse response;
     @Mock
     private PrintWriter printWriter;
     @Before
