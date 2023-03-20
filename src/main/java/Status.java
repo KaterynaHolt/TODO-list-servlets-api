@@ -5,9 +5,17 @@ public enum Status {
     /**
      * This status means that the task is done
      */
-    COMPLETED,
+    Completed,
     /**
      * This status means that the task hasn't been done yet
      */
-    INCOMPLETED
+    Incompleted,
+    /**
+     * This status means that the task is being worked
+     */
+    InProgress,
+    /**
+     * This status means that the task is in a queue
+     */
+    Pending,
 }

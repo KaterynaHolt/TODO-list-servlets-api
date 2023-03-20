@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ToDoStoreSingletone implements AddingItem, ChangingStatus, RemovingItem, PrintingItem {
+public class ToDoStoreSingletone implements Store {
     private static ToDoStoreSingletone instance = null;
     final Map<String, Item> items = new LinkedHashMap<>();
     private String uuid = null;
@@ -31,7 +31,7 @@ public class ToDoStoreSingletone implements AddingItem, ChangingStatus, Removing
      * @param s - it's a task, which must be added
      */
     public void addItem(String s){
-        items.put(getUuid(), new Item(s, Status.INCOMPLETED));
+        items.put(getUuid(), new Item(s, Status.Incompleted));
     }
 
     /**

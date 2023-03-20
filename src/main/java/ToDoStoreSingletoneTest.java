@@ -26,7 +26,7 @@ public class ToDoStoreSingletoneTest {
         singletone.addItem("The first item");
         //THEN
         Assertions.assertTrue(singletone.getItems().size() == 1);
-        assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.INCOMPLETED);
+        assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.Incompleted);
         assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first item");
     }
 
@@ -65,10 +65,10 @@ public class ToDoStoreSingletoneTest {
         //GIVEN
         singletone.addItem("The first item");
         singletone.addItem("The second item");
-        Item item1 = new Item("The first Item", Status.COMPLETED);
-        Item item2 = new Item("The second Item", Status.INCOMPLETED);
+        Item item1 = new Item("The first Item", Status.Completed);
+        Item item2 = new Item("The second Item", Status.Incompleted);
         //WHEN
-        singletone.changeStatus(1, Status.COMPLETED);
+        singletone.changeStatus(1, Status.Completed);
         //THEN
         assertThat(singletone.getItems().values().toArray()[0].equals(item1));
         assertThat(singletone.getItems().values().toArray()[1].equals(item2));
@@ -83,13 +83,13 @@ public class ToDoStoreSingletoneTest {
         singletone.addItem("The first item");
         singletone.addItem("The second item");
         singletone.addItem("The third item");
-        Item item1 = new Item("The first Item", Status.INCOMPLETED);
-        Item item2 = new Item("The second Item", Status.COMPLETED);
-        Item item3 = new Item("The third Item", Status.INCOMPLETED);
+        Item item1 = new Item("The first Item", Status.Incompleted);
+        Item item2 = new Item("The second Item", Status.Completed);
+        Item item3 = new Item("The third Item", Status.Incompleted);
         //WHEN
-        singletone.changeStatus(1, Status.COMPLETED);
-        singletone.changeStatus(2, Status.COMPLETED);
-        singletone.changeStatus(1, Status.INCOMPLETED);
+        singletone.changeStatus(1, Status.Completed);
+        singletone.changeStatus(2, Status.Completed);
+        singletone.changeStatus(1, Status.Incompleted);
         //THEN
         assertThat(singletone.getItems().values().toArray()[0].equals(item1));
         assertThat(singletone.getItems().values().toArray()[1].equals(item2));
@@ -144,8 +144,8 @@ public class ToDoStoreSingletoneTest {
         //THEN
         Assertions.assertEquals("=========TO DO LIST=============\n" +
                 "|#  |    Title   |   Status   |\n" +
-                "|1. |     Item 1 |INCOMPLETED |\n" +
-                "|2. |     Item 2 |INCOMPLETED |\n" +
+                "|1. |     Item 1 |Incompleted |\n" +
+                "|2. |     Item 2 |Incompleted |\n" +
                 "================================\n", st.toString());
         System.setOut(print);
     }

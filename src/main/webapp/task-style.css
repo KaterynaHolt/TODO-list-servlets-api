@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, lightpink, cornflowerblue);
+    padding: 0 10px;
+}
+
+.newtask{
+    padding: 50px 0;
+}
+
+.newtask form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 1085px;
+    height: 540px;
+    padding: 50px 70px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+    background-color: white;
+}
+
+.newtask form h2{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.newtask .textbox{
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 350px;
+    height: 30px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    margin-top: 5px;
+}
+
+.newtask .add{
+    font-size: 14px;
+    background-color: limegreen;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 195px;
+    width: 75px;
+    height: 30px;
+}
+
+.newtask .cancel{
+    font-size: 14px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-radius: 10px;
+    margin-top: 5px;
+    width: 75px;
+    height: 30px;
+}
+
+.newtask .form-group label{
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 15px;
+    padding: 10px 0;
+}
+
+.newtask .label-form{
+    font-size: 13px;
+    font-family: sans-serif;
+    padding: 5px 0;
+    right: 0px;
+    margin-left: 450px;
+    margin-top: -350px;
+}
+
+.newtask .label-form label{
+    padding: 5px 0;
+    margin-bottom: 5px;
+}
+
+.newtask .checkbox{
+    border-radius: 10px;
+    box-shadow: 0 0 1em lightgrey;
+    background-color: white;
+    right: 0px;
+    width: 200px;
+    height: 150px;
+    padding: 0;
+}
+
+.newtask .checkbox-status{
+    border-radius: 10px;
+    box-shadow: 0 0 1em lightgrey;
+    background-color: white;
+    right: 0px;
+    width: 200px;
+    height: 150px;
+}
+
+.newtask .checkbox-status label{
+    padding: 15px 0;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.newtask .tags{
+    border-radius: 10px;
+    box-shadow: 0 0 1em lightgrey;
+    background-color: white;
+    right: 0px;
+    width: 200px;
+    height: 150px;
+    padding: 0;
+}
+
+.newtask .checkbox-priority{
+    border-radius: 10px;
+    box-shadow: 0 0 1em lightgrey;
+    background-color: white;
+    right: 0px;
+    width: 200px;
+    height: 115px;
+    padding: 10px 0;
+}
+
+.newtask .label-checkbox{
+    font-size: 13px;
+    font-family: sans-serif;
+}
+
+.newtask .tags label{
+    float: bottom;
+    padding-left: 15px;
+    padding-top: -15px;
+}
+
+.newtask .checkbox-priority label{
+    padding: 15px;
+}
+
+.newtask .div-label-status{
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.newtask .label-tags{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.newtask .div-label{
+    margin-bottom: 20px;
+}
+
+
+
+input[type=radio]{
+    vertical-align: middle;
+    float: right;
+    margin-right: 15px;
+}
+
+input[type=checkbox]{
+    vertical-align: middle;
+}
+
+
+.newtask .label-form-priority{
+    font-size: 13px;
+    font-family: sans-serif;
+    padding: 5px 0;
+    right: 0px;
+    margin-left: 450px;
+    margin-top: 15px;
+}
+
+.newtask .label-form-tags{
+    font-size: 13px;
+    font-family: sans-serif;
+    padding: 5px 0;
+    right: 0px;
+    margin-left: 730px;
+    margin-top: -178px;
+}
