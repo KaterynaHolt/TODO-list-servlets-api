@@ -1,3 +1,6 @@
+package com.todolist.app.model;
+import com.todolist.app.model.Tag;
+
 import java.util.ArrayList;
 import java.util.List;
 

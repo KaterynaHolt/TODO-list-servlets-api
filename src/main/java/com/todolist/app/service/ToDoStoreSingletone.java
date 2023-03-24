@@ -1,8 +1,14 @@
+package com.todolist.app.service;
+
+import com.todolist.app.model.Item;
+import com.todolist.app.model.Status;
+import com.todolist.app.model.Store;
+
 import java.util.*;
 
 public class ToDoStoreSingletone implements Store {
     private static ToDoStoreSingletone instance = null;
-    final Map<String, Item> items = new LinkedHashMap<>();
+    private final Map<String, Item> items = new LinkedHashMap<>();
     private String uuid = null;
     protected ToDoStoreSingletone(){
     }
@@ -31,7 +37,7 @@ public class ToDoStoreSingletone implements Store {
      * @param s - it's a task, which must be added
      */
     public void addItem(String s){
-        items.put(getUuid(), new Item(s, Status.Incompleted));
+        items.put(getUuid(), new Item(s, Status.INCOMPLETED));
     }
 
     /**

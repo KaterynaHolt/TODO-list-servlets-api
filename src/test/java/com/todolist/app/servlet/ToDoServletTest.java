@@ -1,3 +1,5 @@
+package com.todolist.app.servlet;
+
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
