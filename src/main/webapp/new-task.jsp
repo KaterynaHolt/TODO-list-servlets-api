@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>New task</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
     <link rel="stylesheet" href="task-style.css" />
 </head>
 <body>
@@ -30,20 +34,7 @@
         </div>
 
         <div class="form-group">
-            <label class="text">Tags</label> <br>
-            <select class="select-mult" name="tags" id="tags" multiple>
-                <option> </option>
-                <option value="Daily routine">Daily routine</option>
-                <option value="Home">Home</option>
-                <option value="Work">Work</option>
-                <option value="Reading">Reading</option>
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-            <label class="text">Priority</label> <br>
+            <label class="text-priority">Priority</label> <br>
             <select class="select">
                 <option> </option>
                 <option value="Minor">Minor</option>
@@ -51,6 +42,26 @@
                 <option value="Normal">Normal</option>
             </select>
         </div>
+
+        <div class="form-group">
+            <label class="text">Tags</label> <br>
+            <select class="select-mult" name="tags" id="tags" multiple="true">
+                <option> </option>
+                <option value="Daily routine">Daily routine</option>
+                <option value="Home">Home</option>
+                <option value="Work">Work</option>
+                <option value="Reading">Reading</option>
+            </select>
+        </div>
+        <script>
+            $(document).ready(function (){
+                $(".select-mult").select2({
+                    placeholder: " ",
+                    tags: true,
+                    tokenSeparators: ['/',',',';'," "]
+                });
+            })
+        </script>
 
         <div class="form-group">
             <button class="add" type="submit">Add</button>
