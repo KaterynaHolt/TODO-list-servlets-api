@@ -1,5 +1,9 @@
 package com.todolist.app.model;
 
+
+
+
+
 public class ToDoCommand {
     private int number;
     private Command command;

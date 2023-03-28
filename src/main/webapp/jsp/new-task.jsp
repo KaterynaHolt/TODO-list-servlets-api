@@ -6,7 +6,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
-    <link rel="stylesheet" href="task-style.css" />
+    <script type="text/javascript" src="../js/newtask.js"></script>
+    <link rel="stylesheet" href="../css/task-style.css" />
 </head>
 <body>
 <div class="newtask">
@@ -53,16 +54,6 @@
                 <option value="Reading">Reading</option>
             </select>
         </div>
-        <script>
-            $(document).ready(function (){
-                $(".select-mult").select2({
-                    placeholder: " ",
-                    tags: true,
-                    tokenSeparators: ['/',',',';'," "]
-                });
-            })
-        </script>
-
         <div class="form-group">
             <button class="add" type="submit">Add</button>
             <button class="cancel" type="submit">Cancel</button>

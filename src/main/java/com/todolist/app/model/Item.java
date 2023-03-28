@@ -1,20 +1,23 @@
 package com.todolist.app.model;
-import com.todolist.app.model.Tag;
-
 import java.util.ArrayList;
 import java.util.List;
+
+
+
+
 
 public class Item {
     private String value;
     private Status status;
     private Priority priority;
     private String date;
-    private List<Tag> tags = new ArrayList<>();
+    private List<Tag> tags;
     public Item(String value, Status status, Priority priority, String date){
         this.value = value;
         this.status = status;
         this.priority = priority;
         this.date = date;
+        this.tags = new ArrayList<>();
     }
 
     public Item(String value, Status status){
@@ -56,5 +59,10 @@ public class Item {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString(){
+        return value + ", " + date + ", " + status + ", " + priority + ", " + tags.toString();
     }
 }
