@@ -1,15 +1,21 @@
+package com.todolist.app.service;
+import com.todolist.app.model.Item;
+import com.todolist.app.model.Status;
 import java.util.*;
 
-public class ToDoStoreSingletone implements AddingItem, ChangingStatus, RemovingItem, PrintingItem {
-    private static ToDoStoreSingletone instance = null;
-    final Map<String, Item> items = new LinkedHashMap<>();
-    private String uuid = null;
-    protected ToDoStoreSingletone(){
+
+
+
+
+public class ToDoStoreSingleton implements Store {
+    private static ToDoStoreSingleton instance = null;
+    private final Map<String, Item> items = new LinkedHashMap<>();
+    protected ToDoStoreSingleton(){
     }
 
-    public static ToDoStoreSingletone Instance() {
+    public static ToDoStoreSingleton Instance() {
         if (instance==null) {
-            instance = new ToDoStoreSingletone();
+            instance = new ToDoStoreSingleton();
             return instance;
         }
         else
@@ -21,9 +27,7 @@ public class ToDoStoreSingletone implements AddingItem, ChangingStatus, Removing
     }
 
     public String getUuid() {
-        UUID id = UUID.randomUUID();
-        uuid = id.toString();
-        return uuid;
+        return UUID.randomUUID().toString();
     }
 
     /**

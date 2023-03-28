@@ -1,17 +1,22 @@
+package com.todolist.app.service;
+import com.todolist.app.model.Item;
+import com.todolist.app.model.Status;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Spy;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+
+
+
+
 public class ToDoStoreSingletoneTest {
     @Spy
-    private ToDoStoreSingletone singletone = ToDoStoreSingletone.Instance();
+    private ToDoStoreSingleton singletone = ToDoStoreSingleton.Instance();
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
