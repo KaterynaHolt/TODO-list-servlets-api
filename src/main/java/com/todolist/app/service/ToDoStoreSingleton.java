@@ -45,12 +45,8 @@ public class ToDoStoreSingleton implements Store {
      */
     public void addItem(Item item){
         items.put(getUuid(), item);
-        logger.info("Logger");
+        logger.info("New task was added!");
     }
-
-    /*public void addItem(String value, String date, Status status, Priority priority, ArrayList<Tag> tags){
-        items.put(getUuid(), new Item(value, date, status, priority, tags));
-    }*/
 
     /**
      * This method changes status of task
@@ -88,18 +84,5 @@ public class ToDoStoreSingleton implements Store {
         System.out.println(fm.toString().trim());
         System.out.println("================================");
         fm.close();
-    }
-
-    public void saveToFile() throws IOException {
-        File f = new File("/home/user/results.txt");
-        FileWriter file = new FileWriter(f);
-        for(Map.Entry<String, Item> tasks : getItems().entrySet()){
-            file.write("Text - " + tasks.getValue().getValue() + "\n");
-            file.write("Date - " + tasks.getValue().getDate() + "\n");
-            file.write("Status - " + tasks.getValue().getStatus() + "\n");
-            file.write("Priority - " + tasks.getValue().getPriority() + "\n");
-            file.write("Tags - " + tasks.getValue().getTags() + "\n");
-        }
-        file.close();
     }
 }

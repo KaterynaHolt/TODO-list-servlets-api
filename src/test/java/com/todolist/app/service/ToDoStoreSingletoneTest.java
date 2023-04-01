@@ -2,7 +2,9 @@ package com.todolist.app.service;
 
 
 import com.todolist.app.model.Item;
+import com.todolist.app.model.Priority;
 import com.todolist.app.model.Status;
+import com.todolist.app.model.Tag;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.MockitoAnnotations;
@@ -11,6 +13,8 @@ import org.junit.jupiter.api.Assertions;
 import org.mockito.Spy;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ToDoStoreSingletoneTest {
@@ -24,42 +28,81 @@ public class ToDoStoreSingletoneTest {
     /**
      * Test adding one item - addItem
      */
-    /*@Test
+    @Test
     public void test_adding_one_item(){
+        //GIVEN
+        List<Tag> tags = new ArrayList<>();
+        tags.add(Tag.WORK);
+        tags.add(Tag.READING);
+        Item item1 = new Item("The first Item", "02.04.2023", Status.COMPLETED, Priority.NORMAL,
+                (ArrayList<Tag>) tags);
         //WHEN
-        singletone.addItem("The first item");
+        singletone.addItem(item1);
         //THEN
         Assertions.assertTrue(singletone.getItems().size() == 1);
-        assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.INCOMPLETED);
-        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first item");
-    }*/
+        assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.COMPLETED);
+        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first Item");
+        assertThat(singletone.getItems().values()).extracting(Item::getDate).contains("02.04.2023");
+        assertThat(singletone.getItems().values()).extracting(Item::getPriority).contains(Priority.NORMAL);
+        assertThat(singletone.getItems().values()).extracting(Item::getTags).contains(tags);
+    }
 
     /**
      * Test adding several items - addItem
      */
-    /*@Test
+    @Test
     public void test_adding_several_items(){
+        //GIVEN
+        List<Tag> tags1 = new ArrayList<>();
+        tags1.add(Tag.WORK);
+        tags1.add(Tag.READING);
+        Item item1 = new Item("The first Item", "02.04.2023", Status.PENDING, Priority.NORMAL,
+                (ArrayList<Tag>) tags1);
+        List<Tag> tags2 = new ArrayList<>();
+        tags2.add(Tag.DAILYROUTINE);
+        tags2.add(Tag.HOME);
+        Item item2 = new Item("The second Item", "03.04.2023", Status.INPROGRESS, Priority.CRITICAL,
+                (ArrayList<Tag>) tags2);
         //WHEN
-        singletone.addItem("The first item");
-        singletone.addItem("The second item");
+        singletone.addItem(item1);
+        singletone.addItem(item2);
         //THEN
         Assertions.assertTrue(singletone.getItems().size() == 2);
-        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first item");
-        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The second item");
-    }*/
+        assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.PENDING);
+        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first Item");
+        assertThat(singletone.getItems().values()).extracting(Item::getDate).contains("02.04.2023");
+        assertThat(singletone.getItems().values()).extracting(Item::getPriority).contains(Priority.NORMAL);
+        assertThat(singletone.getItems().values()).extracting(Item::getTags).contains(tags1);
+
+        assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.INPROGRESS);
+        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The second Item");
+        assertThat(singletone.getItems().values()).extracting(Item::getDate).contains("03.04.2023");
+        assertThat(singletone.getItems().values()).extracting(Item::getPriority).contains(Priority.CRITICAL);
+        assertThat(singletone.getItems().values()).extracting(Item::getTags).contains(tags2);
+    }
 
     /**
      * Test adding the same items - addItem
      */
-    /*@Test
+    @Test
     public void test_adding_the_same_items(){
+        //GIVEN
+        List<Tag> tags1 = new ArrayList<>();
+        tags1.add(Tag.WORK);
+        tags1.add(Tag.READING);
+        Item item1 = new Item("The first Item", "02.04.2023", Status.PENDING, Priority.NORMAL,
+                (ArrayList<Tag>) tags1);
         //WHEN
-        singletone.addItem("The first item");
-        singletone.addItem("The first item");
+        singletone.addItem(item1);
+        singletone.addItem(item1);
         //THEN
         Assertions.assertTrue(singletone.getItems().size() == 2);
-        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first item");
-    }*/
+        assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.PENDING);
+        assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first Item");
+        assertThat(singletone.getItems().values()).extracting(Item::getDate).contains("02.04.2023");
+        assertThat(singletone.getItems().values()).extracting(Item::getPriority).contains(Priority.NORMAL);
+        assertThat(singletone.getItems().values()).extracting(Item::getTags).contains(tags1);
+    }
 
     /**
      * Test changing status of items from incompleted to completed - changeStatus

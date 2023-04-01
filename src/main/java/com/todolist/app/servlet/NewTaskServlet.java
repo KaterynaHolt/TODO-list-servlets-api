@@ -39,8 +39,6 @@ public class NewTaskServlet extends HttpServlet {
         ToDoStoreSingleton singleton = ToDoStoreSingleton.Instance();
         singleton.addItem(item);
 
-        //singleton.saveToFile();
-
         //logger.info("Logger");
 
     }
