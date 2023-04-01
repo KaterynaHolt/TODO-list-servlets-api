@@ -1,13 +1,22 @@
 package com.todolist.app.service;
+
+
 import com.todolist.app.model.Item;
+import com.todolist.app.model.Priority;
 import com.todolist.app.model.Status;
+import com.todolist.app.model.Tag;
+import com.todolist.app.servlet.NewTaskServlet;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 
-
-
-
 public class ToDoStoreSingleton implements Store {
+    private Logger logger = LogManager.getLogger(ToDoStoreSingleton.class);
     private static ToDoStoreSingleton instance = null;
     private final Map<String, Item> items = new LinkedHashMap<>();
     protected ToDoStoreSingleton(){
@@ -32,11 +41,16 @@ public class ToDoStoreSingleton implements Store {
 
     /**
      * This method adds a new task to todo list
-     * @param s - it's a task, which must be added
+     * @param item - it's a task, which must be added
      */
-    public void addItem(String s){
-        items.put(getUuid(), new Item(s, Status.INCOMPLETED));
+    public void addItem(Item item){
+        items.put(getUuid(), item);
+        logger.info("Logger");
     }
+
+    /*public void addItem(String value, String date, Status status, Priority priority, ArrayList<Tag> tags){
+        items.put(getUuid(), new Item(value, date, status, priority, tags));
+    }*/
 
     /**
      * This method changes status of task
@@ -74,5 +88,18 @@ public class ToDoStoreSingleton implements Store {
         System.out.println(fm.toString().trim());
         System.out.println("================================");
         fm.close();
+    }
+
+    public void saveToFile() throws IOException {
+        File f = new File("/home/user/results.txt");
+        FileWriter file = new FileWriter(f);
+        for(Map.Entry<String, Item> tasks : getItems().entrySet()){
+            file.write("Text - " + tasks.getValue().getValue() + "\n");
+            file.write("Date - " + tasks.getValue().getDate() + "\n");
+            file.write("Status - " + tasks.getValue().getStatus() + "\n");
+            file.write("Priority - " + tasks.getValue().getPriority() + "\n");
+            file.write("Tags - " + tasks.getValue().getTags() + "\n");
+        }
+        file.close();
     }
 }

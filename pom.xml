@@ -22,6 +22,7 @@
     <junit_compile.version>4.13.2</junit_compile.version>
     <junit.jupiter.version>5.9.1</junit.jupiter.version>
     <assertj.version>3.23.1</assertj.version>
+    <log4j.version>2.20.0</log4j.version>
   </properties>
 
   <dependencies>
@@ -64,7 +65,7 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.jupiter.version}</version>
-      <scope>compile</scope>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -72,7 +73,13 @@
       <version>${junit_compile.version}</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-web</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
   </dependencies>
+
   <build>
     <finalName>todo-list-servlets-api</finalName>
 

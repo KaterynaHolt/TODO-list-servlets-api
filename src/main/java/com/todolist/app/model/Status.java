@@ -1,9 +1,6 @@
 package com.todolist.app.model;
 
 
-
-
-
 /**
  * These are statuses, which user can mark his tasks
  */

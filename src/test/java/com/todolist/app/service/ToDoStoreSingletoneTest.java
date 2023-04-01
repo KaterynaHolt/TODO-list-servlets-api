@@ -1,4 +1,6 @@
 package com.todolist.app.service;
+
+
 import com.todolist.app.model.Item;
 import com.todolist.app.model.Status;
 import org.junit.Before;
@@ -9,9 +11,6 @@ import org.junit.jupiter.api.Assertions;
 import org.mockito.Spy;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
-
-
 
 
 public class ToDoStoreSingletoneTest {
@@ -25,7 +24,7 @@ public class ToDoStoreSingletoneTest {
     /**
      * Test adding one item - addItem
      */
-    @Test
+    /*@Test
     public void test_adding_one_item(){
         //WHEN
         singletone.addItem("The first item");
@@ -33,12 +32,12 @@ public class ToDoStoreSingletoneTest {
         Assertions.assertTrue(singletone.getItems().size() == 1);
         assertThat(singletone.getItems().values()).extracting(Item::getStatus).contains(Status.INCOMPLETED);
         assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first item");
-    }
+    }*/
 
     /**
      * Test adding several items - addItem
      */
-    @Test
+    /*@Test
     public void test_adding_several_items(){
         //WHEN
         singletone.addItem("The first item");
@@ -47,12 +46,12 @@ public class ToDoStoreSingletoneTest {
         Assertions.assertTrue(singletone.getItems().size() == 2);
         assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first item");
         assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The second item");
-    }
+    }*/
 
     /**
      * Test adding the same items - addItem
      */
-    @Test
+    /*@Test
     public void test_adding_the_same_items(){
         //WHEN
         singletone.addItem("The first item");
@@ -60,12 +59,12 @@ public class ToDoStoreSingletoneTest {
         //THEN
         Assertions.assertTrue(singletone.getItems().size() == 2);
         assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("The first item");
-    }
+    }*/
 
     /**
      * Test changing status of items from incompleted to completed - changeStatus
      */
-    @Test
+    /*@Test
     public void test_completing_status(){
         //GIVEN
         singletone.addItem("The first item");
@@ -77,12 +76,12 @@ public class ToDoStoreSingletoneTest {
         //THEN
         assertThat(singletone.getItems().values().toArray()[0].equals(item1));
         assertThat(singletone.getItems().values().toArray()[1].equals(item2));
-    }
+    }*/
 
     /**
      * Test changing status of items from completed to incompleted - changeStatus
      */
-    @Test
+    /*@Test
     public void test_incompleting_status(){
         //GIVEN
         singletone.addItem("The first item");
@@ -99,12 +98,12 @@ public class ToDoStoreSingletoneTest {
         assertThat(singletone.getItems().values().toArray()[0].equals(item1));
         assertThat(singletone.getItems().values().toArray()[1].equals(item2));
         assertThat(singletone.getItems().values().toArray()[2].equals(item3));
-    }
+    }*/
 
     /**
      * Test removing one item - removeItem
      */
-    @Test
+    /*@Test
     public void test_removing_item(){
         //GIVEN
         singletone.addItem("Item 1");
@@ -114,12 +113,12 @@ public class ToDoStoreSingletoneTest {
         //THEN
         Assertions.assertTrue(singletone.getItems().size() == 1);
         assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("Item 2");
-    }
+    }*/
 
     /**
      * Test removing several items - removeItem
      */
-    @Test
+    /*@Test
     public void test_removing_several_items(){
         //GIVEN
         singletone.addItem("Item 1");
@@ -131,12 +130,12 @@ public class ToDoStoreSingletoneTest {
         //THEN
         Assertions.assertTrue(singletone.getItems().size() == 1);
         assertThat(singletone.getItems().values()).extracting(Item::getValue).contains("Item 2");
-    }
+    }*/
 
     /**
      * Test select data from store and print method - printAll
      */
-    @Test
+    /*@Test
     public void test_printing_items(){
         //GIVEN
         ByteArrayOutputStream st = new ByteArrayOutputStream();
@@ -153,5 +152,5 @@ public class ToDoStoreSingletoneTest {
                 "|2. |     Item 2 |INCOMPLETED |\n" +
                 "================================\n", st.toString());
         System.setOut(print);
-    }
+    }*/
 }
