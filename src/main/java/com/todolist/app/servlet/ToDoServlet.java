@@ -8,37 +8,43 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
 import com.todolist.app.model.Item;
 
 
-@WebServlet(name = "ToDoServlet", value = "/hello")
+@WebServlet(name = "ToDoServlet", value = "/hello/")
 public class ToDoServlet extends HttpServlet {
+    private final ToDoStoreSingleton singletonStore = ToDoStoreSingleton.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String operation = request.getParameter("operation");
+        String id = request.getParameter("id");
         response.setContentType("text/html");
+        System.out.println(id);
+        System.out.println(operation);
         PrintWriter printWriter = response.getWriter();
-        printWriter.write("Hello world TODO list!");
+        printWriter.println("<html>");
+        printWriter.println("<body>");
+        printWriter.println("<h1>Information about task</h1>");
+        Optional<Map.Entry<String, Item>> foundElement = singletonStore.getItems().entrySet().stream()
+                .filter(val -> val.getKey().equals(id)).findFirst();
+        if(foundElement.isPresent()){
+            printWriter.println("<p> Text - " + foundElement.get().getValue().getValue() + "</p>");
+            printWriter.println("<p> Date - " + foundElement.get().getValue().getDate() + "</p>");
+            printWriter.println("<p> Status - " + foundElement.get().getValue().getStatus() + "</p>");
+            printWriter.println("<p> Priority - " + foundElement.get().getValue().getPriority() + "</p>");
+            printWriter.println("<p> Tags - " + foundElement.get().getValue().getTags() + "</p>");
+        }
+        printWriter.println("<p> Task - was " + operation + "</p>");
+        printWriter.println("</body>");
+        printWriter.println("</html>");
         printWriter.close();
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ToDoStoreSingleton singleton = ToDoStoreSingleton.Instance();
-        response.setContentType("text/html");
-        PrintWriter printWriter = response.getWriter();
-        printWriter.print("<html>");
-        printWriter.print("<body>");
-        printWriter.print("<h1>Information about task</h1>");
-        /*for (Map.Entry<String, Item> tasks : singleton.getItems().entrySet()) {
-            printWriter.print("<p> Text - " + tasks.getValue().getValue() + "</p>");
-            printWriter.print("<p> Date - " + tasks.getValue().getDate() + "</p>");
-            printWriter.print("<p> Status - " + tasks.getValue().getStatus() + "</p>");
-            printWriter.print("<p> Priority - " + tasks.getValue().getPriority() + "</p>");
-            printWriter.print("<p> Tags - " + tasks.getValue().getTags() + "</p>");
-        }
-        printWriter.print("<p> Task - " + response.toString() + "</p>");*/
-        printWriter.print("</body>");
-        printWriter.print("</html>");
-        printWriter.close();
+
     }
 }

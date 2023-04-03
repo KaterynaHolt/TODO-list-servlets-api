@@ -9,16 +9,13 @@ import com.todolist.app.service.ToDoStoreSingleton;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@WebServlet(name = "NewTaskServlet", value = "/NewTaskServlet")
+@WebServlet(name = "NewTaskServlet", value = "/new-task")
 public class NewTaskServlet extends HttpServlet {
-    private Logger logger = LogManager.getLogger(NewTaskServlet.class);
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect(request.getContextPath() + "/jsp/new-task.jsp");
@@ -26,6 +23,17 @@ public class NewTaskServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ToDoStoreSingleton singleton = ToDoStoreSingleton.getInstance();
+        String uuid = singleton.addItem(getItem(request));
+        response.sendRedirect(request.getContextPath() + "/hello/?operation=ADD&id=" + uuid);
+    }
+
+    /**
+     *This method gets item from request
+     * @param request - http request
+     * @return item
+     */
+    private static Item getItem(HttpServletRequest request) {
         String text = request.getParameter("text");
         String date = request.getParameter("date");
         Status status = Status.valueOf(request.getParameter("status"));
@@ -35,11 +43,9 @@ public class NewTaskServlet extends HttpServlet {
         for (String t : strT){
             tags.add(Tag.valueOf(t));
         }
-        Item item = new Item(text, date, status, priority, (ArrayList<Tag>) tags);
-        ToDoStoreSingleton singleton = ToDoStoreSingleton.Instance();
-        singleton.addItem(item);
-
-        //logger.info("Logger");
-
+        Item item = new Item(text, date, status, priority, tags);
+        return item;
     }
+
+
 }

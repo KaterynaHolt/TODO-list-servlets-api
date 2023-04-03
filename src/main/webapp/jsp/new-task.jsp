@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="newtask">
-    <form action="<%= request.getContextPath() %>/hello" method="post">
+    <form action="<%= request.getContextPath() %>/new-task" method="post">
         <h2 class="main-text">New task</h2>
         <div class="form-group">
             <label class="text">Text <br>

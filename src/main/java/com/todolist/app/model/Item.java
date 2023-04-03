@@ -11,7 +11,7 @@ public class Item {
     private Priority priority;
     private String date;
     private List<Tag> tags;
-    public Item(String value, String date, Status status, Priority priority, ArrayList<Tag> tags){
+    public Item(String value, String date, Status status, Priority priority, List<Tag> tags){
         this.value = value;
         this.date = date;
         this.status = status;

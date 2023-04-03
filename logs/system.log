@@ -3,3 +3,40 @@
 22:49:26.829 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
 22:49:26.831 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
 22:49:26.861 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
+18:21:22.149 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
+18:21:22.169 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
+18:21:22.393 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
+18:21:22.402 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
+18:21:22.441 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task was added!
+18:25:47.241 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 036c2348-4cd9-473f-91cb-6e45a112c19a - The first Item was added!
+19:06:15.376 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 3e1ba2d5-b75e-4a68-9151-ebf4c87eb4b6 - The first Item was added!
+19:06:15.399 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task c961a130-d6ec-4a24-a130-f0bc805a2264 - The second Item was added!
+19:06:15.644 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task e2e4ac3b-0afe-4507-8fa2-4ff7159cb1d2 - The first Item was added!
+19:06:15.646 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 7d8557be-f14b-4418-b21e-447775a31819 - The first Item was added!
+19:06:15.710 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 30789123-b696-4f2e-bb7c-55d17248e3be - The first Item was added!
+19:09:20.548 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 9928d332-ee20-4d02-887a-d5a4f3699693 - The first Item was added!
+19:09:20.574 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task e54e0fc9-de0e-4f3b-9d8a-2c1b83593b7c - The second Item was added!
+19:09:20.901 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 364688c6-fe41-4a61-92b8-b83c822c1d3a - The first Item was added!
+19:09:20.905 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 530ea95d-bc68-4d45-a63d-e1d986e8f482 - The first Item was added!
+19:09:20.930 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 634fa365-300b-4c78-96ab-4bd8b5ae724b - The first Item was added!
+19:09:57.396 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 57b45abb-514c-466b-bea3-df208016970d - The first Item was added!
+19:10:27.161 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task cfc16e6e-d41f-4d74-9af8-ca6353831d4d - The first Item was added!
+19:10:27.182 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task e5398020-d387-4599-8464-2e2df028d5b5 - The second Item was added!
+19:10:45.112 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task f63a8877-e7f7-4615-81b2-4da8b715e03d - The first Item was added!
+19:10:45.131 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task f2868712-efa2-458d-8a16-1d95ab40c496 - The first Item was added!
+19:11:03.054 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task bf40e98d-f499-4f1e-bd41-8a21805d9799 - The first Item was added!
+19:11:03.074 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task a2711262-1489-4e1e-920f-4df4c81765a1 - The second Item was added!
+19:11:03.324 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 8b37c1c6-6df0-461b-be72-53d7fadbe903 - The first Item was added!
+19:11:03.330 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 6600d61b-b700-45e1-b8e5-f96a91f0cd2f - The first Item was added!
+19:11:03.392 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 0d9bdb9c-f435-4adf-aa1e-31123de49ea5 - The first Item was added!
+19:11:47.542 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task e73d538b-5fcd-4902-9e28-bd7112277c07 - The first Item was added!
+19:11:58.799 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 0e45744b-f867-4372-b1c3-008e40075144 - The first Item was added!
+19:11:58.820 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task d07023c1-51b6-4a18-99af-e228e7cffb61 - The first Item was added!
+20:14:59.008 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 40924567-666a-41d5-8306-6062986bafb3 - The first Item was added!
+20:14:59.028 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 4499c7a4-ee43-470d-aa4e-881abd20085e - The second Item was added!
+20:14:59.242 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task f3f42638-4658-4819-8a8d-081b55634377 - The first Item was added!
+20:14:59.245 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task c3a95469-bbf4-4317-a140-7dcd58458f60 - The first Item was added!
+20:14:59.281 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task d4c6c42e-e116-4d20-a976-2ea47a40230d - The first Item was added!
+20:15:14.430 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task be8be328-1a0e-4ebd-a013-8a8b4741ee83 - The first Item was added!
+20:15:27.331 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task fb13ec75-72e1-47d3-b7b8-519d9aeb7c79 - The first Item was added!
+20:15:27.352 [main] INFO  com.todolist.app.service.ToDoStoreSingleton - New task 2cf28c6e-c482-4ff6-b813-88a967bcb332 - The first Item was added!

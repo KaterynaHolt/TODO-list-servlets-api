@@ -19,7 +19,7 @@ import java.util.List;
 
 public class ToDoStoreSingletoneTest {
     @Spy
-    private ToDoStoreSingleton singletone = ToDoStoreSingleton.Instance();
+    private ToDoStoreSingleton singletone = ToDoStoreSingleton.getInstance();
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
@@ -34,8 +34,7 @@ public class ToDoStoreSingletoneTest {
         List<Tag> tags = new ArrayList<>();
         tags.add(Tag.WORK);
         tags.add(Tag.READING);
-        Item item1 = new Item("The first Item", "02.04.2023", Status.COMPLETED, Priority.NORMAL,
-                (ArrayList<Tag>) tags);
+        Item item1 = new Item("The first Item", "02.04.2023", Status.COMPLETED, Priority.NORMAL, tags);
         //WHEN
         singletone.addItem(item1);
         //THEN
@@ -56,13 +55,11 @@ public class ToDoStoreSingletoneTest {
         List<Tag> tags1 = new ArrayList<>();
         tags1.add(Tag.WORK);
         tags1.add(Tag.READING);
-        Item item1 = new Item("The first Item", "02.04.2023", Status.PENDING, Priority.NORMAL,
-                (ArrayList<Tag>) tags1);
+        Item item1 = new Item("The first Item", "02.04.2023", Status.PENDING, Priority.NORMAL, tags1);
         List<Tag> tags2 = new ArrayList<>();
         tags2.add(Tag.DAILYROUTINE);
         tags2.add(Tag.HOME);
-        Item item2 = new Item("The second Item", "03.04.2023", Status.INPROGRESS, Priority.CRITICAL,
-                (ArrayList<Tag>) tags2);
+        Item item2 = new Item("The second Item", "03.04.2023", Status.INPROGRESS, Priority.CRITICAL, tags2);
         //WHEN
         singletone.addItem(item1);
         singletone.addItem(item2);
@@ -90,8 +87,7 @@ public class ToDoStoreSingletoneTest {
         List<Tag> tags1 = new ArrayList<>();
         tags1.add(Tag.WORK);
         tags1.add(Tag.READING);
-        Item item1 = new Item("The first Item", "02.04.2023", Status.PENDING, Priority.NORMAL,
-                (ArrayList<Tag>) tags1);
+        Item item1 = new Item("The first Item", "02.04.2023", Status.PENDING, Priority.NORMAL, tags1);
         //WHEN
         singletone.addItem(item1);
         singletone.addItem(item1);

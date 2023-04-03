@@ -16,19 +16,18 @@ import java.util.*;
 
 
 public class ToDoStoreSingleton implements Store {
-    private Logger logger = LogManager.getLogger(ToDoStoreSingleton.class);
     private static ToDoStoreSingleton instance = null;
     private final Map<String, Item> items = new LinkedHashMap<>();
     protected ToDoStoreSingleton(){
     }
 
-    public static ToDoStoreSingleton Instance() {
+    public static ToDoStoreSingleton getInstance() {
         if (instance==null) {
             instance = new ToDoStoreSingleton();
             return instance;
         }
         else
-            return null;
+            return instance;
     }
 
     public Map<String, Item> getItems() {
@@ -43,9 +42,10 @@ public class ToDoStoreSingleton implements Store {
      * This method adds a new task to todo list
      * @param item - it's a task, which must be added
      */
-    public void addItem(Item item){
-        items.put(getUuid(), item);
-        logger.info("New task was added!");
+    public String addItem(Item item){
+        String uuid = getUuid();
+        items.put(uuid, item);
+        return uuid;
     }
 
     /**
