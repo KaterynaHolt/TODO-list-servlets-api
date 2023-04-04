@@ -9,28 +9,26 @@
     <title>Notification</title>
 </head>
 <body>
-<%
-    ToDoStoreSingleton singletonStore = ToDoStoreSingleton.getInstance();
-    String operation = request.getParameter("operation");
-    String id = request.getParameter("id");
+<h1>Information about task</h1></h1>
+<%  ToDoStoreSingleton singletonStore = ToDoStoreSingleton.getInstance();
+    String id = (String) request.getAttribute("id");
+    String operation = (String) request.getAttribute("operation");
     System.out.println(id);
     System.out.println(operation);
-    PrintWriter printWriter = response.getWriter();
-    printWriter.println("<h1>Information about task</h1>");
     Optional<Map.Entry<String, Item>> foundElement = singletonStore.getItems().entrySet().stream()
             .filter(val -> val.getKey().equals(id)).findFirst();
-    if(foundElement.isPresent()){
-        printWriter.println("<p> Text - " + foundElement.get().getValue().getValue() + "</p>");
-        printWriter.println("<p> Date - " + foundElement.get().getValue().getDate() + "</p>");
-        printWriter.println("<p> Status - " + foundElement.get().getValue().getStatus() + "</p>");
-        printWriter.println("<p> Priority - " + foundElement.get().getValue().getPriority() + "</p>");
-        printWriter.println("<p> Tags - " + foundElement.get().getValue().getTags() + "</p>");
-        printWriter.println("<p> Task - was " + operation + "</p>");
-    }
-    else{
-        printWriter.println("<p> No task has been found. Check your logs </p>");
-    }
-    printWriter.close();
-%>
+    if(foundElement.isPresent()){ %>
+<p> Text - <%= foundElement.get().getValue().getValue() %></p>
+<p> Date - <%= foundElement.get().getValue().getDate() %></p>
+<p> Status - <%= foundElement.get().getValue().getStatus() %></p>
+<p> Priority - <%= foundElement.get().getValue().getPriority() %></p>
+<p> Tags - <%= foundElement.get().getValue().getTags() %></p>
+<p> Task - was <%= operation %></p>
+
+<%  }
+    else{ %>
+<p> No task has been found. Check your logs </p>
+<% } %>
+
 </body>
 </html>

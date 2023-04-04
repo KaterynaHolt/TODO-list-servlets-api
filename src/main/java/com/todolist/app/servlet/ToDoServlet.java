@@ -11,12 +11,8 @@ import java.io.IOException;
 public class ToDoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("operation", "id");
+        request.setAttribute("operation", request.getParameter("operation"));
+        request.setAttribute("id", request.getParameter("id"));
         request.getRequestDispatcher("/jsp/notification.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

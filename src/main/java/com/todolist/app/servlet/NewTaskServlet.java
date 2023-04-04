@@ -18,7 +18,8 @@ import java.util.List;
 public class NewTaskServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect(request.getContextPath() + "/jsp/new-task.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/new-task.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     @Override

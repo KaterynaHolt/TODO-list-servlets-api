@@ -6,8 +6,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
-    <script type="text/javascript" src="../js/newtask.js"></script>
-    <link rel="stylesheet" href="../css/task-style.css" />
+    <script type="text/javascript" src="<%= request.getContextPath() %>/js/newtask.js"></script>
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/task-style.css">
 </head>
 <body>
 <div class="newtask">
