@@ -25,7 +25,7 @@ public class NewTaskServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ToDoStoreSingleton singleton = ToDoStoreSingleton.getInstance();
         String uuid = singleton.addItem(getItem(request));
-        response.sendRedirect(request.getContextPath() + "/hello/?operation=ADD&id=" + uuid);
+        response.sendRedirect(request.getContextPath() + "/notification/?operation=ADD&id=" + uuid);
     }
 
     /**
