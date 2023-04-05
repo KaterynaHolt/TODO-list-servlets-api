@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
 
 public class ToDoServletTest {
     @Spy
-    private ToDoServlet servlet;
+    private NotificationServlet servlet;
     @Mock
     private ServletConfig servletConfig;
     @Mock
