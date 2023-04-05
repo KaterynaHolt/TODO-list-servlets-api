@@ -1,9 +1,8 @@
 package com.todolist.app.model;
+
+
 import java.util.ArrayList;
 import java.util.List;
-
-
-
 
 
 public class Item {
@@ -12,12 +11,12 @@ public class Item {
     private Priority priority;
     private String date;
     private List<Tag> tags;
-    public Item(String value, Status status, Priority priority, String date){
+    public Item(String value, String date, Status status, Priority priority, List<Tag> tags){
         this.value = value;
+        this.date = date;
         this.status = status;
         this.priority = priority;
-        this.date = date;
-        this.tags = new ArrayList<>();
+        this.tags = tags;
     }
 
     public Item(String value, Status status){

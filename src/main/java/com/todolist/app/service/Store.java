@@ -1,16 +1,18 @@
 package com.todolist.app.service;
+
+
+import com.todolist.app.model.Item;
 import com.todolist.app.model.Status;
 
-
-
+import java.util.UUID;
 
 
 public interface Store {
     /**
      * This method adds a new task to todo list
-     * @param s - it's a task, which must be added
+     * @param item - it's a task, which must be added
      */
-    void addItem(String s);
+    String addItem(Item item);
 
     /**
      * This method changes status of task

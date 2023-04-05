@@ -1,4 +1,6 @@
 package com.todolist.app.servlet;
+
+
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,12 +14,9 @@ import java.io.PrintWriter;
 import static org.mockito.Mockito.*;
 
 
-
-
-
 public class ToDoServletTest {
     @Spy
-    private ToDoServlet servlet;
+    private NotificationServlet servlet;
     @Mock
     private ServletConfig servletConfig;
     @Mock
