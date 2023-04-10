@@ -5,13 +5,6 @@ import com.todolist.app.model.Item;
 import com.todolist.app.model.Priority;
 import com.todolist.app.model.Status;
 import com.todolist.app.model.Tag;
-import com.todolist.app.servlet.NewTaskServlet;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.*;
 
 
@@ -36,6 +29,24 @@ public class ToDoStoreSingleton implements Store {
 
     public synchronized String getUuid() {
         return UUID.randomUUID().toString();
+    }
+
+    /**
+     * This method adds some tasks at the beginning
+     */
+    public void getExample(){
+        List<Tag> tags1 = new ArrayList<>();
+        tags1.add(Tag.WORK);
+        tags1.add(Tag.READING);
+        items.put(getUuid(), new Item("Task 1", "10.04.2023", Status.INPROGRESS, Priority.NORMAL, tags1));
+        List<Tag> tags2 = new ArrayList<>();
+        tags2.add(Tag.DAILYROUTINE);
+        items.put(getUuid(), new Item("Task 2", "10.04.2023", Status.PENDING, Priority.MINOR, tags2));
+        List<Tag> tags3 = new ArrayList<>();
+        tags3.add(Tag.DAILYROUTINE);
+        tags3.add(Tag.HOME);
+        tags3.add(Tag.READING);
+        items.put(getUuid(), new Item("Task 3", "10.04.2023", Status.COMPLETED, Priority.CRITICAL, tags3));
     }
 
     /**

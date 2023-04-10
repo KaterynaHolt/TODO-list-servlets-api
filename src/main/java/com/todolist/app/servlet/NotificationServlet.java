@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 
 
-@WebServlet(name = "ToDoServlet", value = "/notification/")
+@WebServlet(name = "ToDoServlet", value = "/notification")
 public class NotificationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
