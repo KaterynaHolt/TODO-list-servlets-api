@@ -2,22 +2,22 @@ package com.todolist.app.servlet;
 
 import com.todolist.app.model.Item;
 import com.todolist.app.model.Status;
+import com.todolist.app.model.ToDoListAppConstants;
 import com.todolist.app.service.ToDoStoreSingleton;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @WebServlet(name = "SeeAllTasksServlet", value = "/see-all-tasks")
 public class SeeAllTasksServlet extends HttpServlet {
-    static ToDoStoreSingleton singleton = ToDoStoreSingleton.getInstance();
 
-    static {
-        singleton.getExample();
-    }
+    ToDoStoreSingleton singleton = ToDoStoreSingleton.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class SeeAllTasksServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter("ADD") != null){
+        if(request.getParameter(ToDoListAppConstants.getAddOperation()) != null){
             response.sendRedirect(request.getContextPath() + "/new-task");
         }
     }

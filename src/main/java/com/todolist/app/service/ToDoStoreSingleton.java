@@ -17,6 +17,7 @@ public class ToDoStoreSingleton implements Store {
     public synchronized static ToDoStoreSingleton getInstance() {
         if (instance==null) {
             instance = new ToDoStoreSingleton();
+            instance.initializeMockData();
             return instance;
         }
         else
@@ -34,7 +35,7 @@ public class ToDoStoreSingleton implements Store {
     /**
      * This method adds some tasks at the beginning
      */
-    public void getExample(){
+    public void initializeMockData(){
         List<Tag> tags1 = new ArrayList<>();
         tags1.add(Tag.WORK);
         tags1.add(Tag.READING);

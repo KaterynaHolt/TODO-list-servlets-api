@@ -6,16 +6,18 @@
     <title>See all tasks</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/see-all-tasks.css">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/more-o.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/shape-circle.css' rel='stylesheet'>
 </head>
 <body>
-<div class="seeall">
+<div class="see-all">
     <form action="<%= request.getContextPath() %>/see-all-tasks" method="post">
-        <h2>You have <%= request.getAttribute("count") %> task(s) to do
+        <h2>You have <span style="color:#F32276"><%= request.getAttribute("count") %> task(s) </span> to do
         <button class="button" type="submit" name="ADD">Add new </button> </h2>
         <div class="incompleted">
             <label>On Hold</label>
         </div>
-        <div class="tableincompleted">
+        <div class="table-incompleted">
             <table>
                 <thead>
                 <tr>
@@ -31,11 +33,13 @@
                 <% Map<String, Item> onhold = (Map<String, Item>) request.getAttribute("onhold");
                 for(Map.Entry<String, Item> entry : onhold.entrySet()){ %>
                 <tr>
-                    <td><%= entry.getValue().getValue() %></td>
+                    <td><i class="gg-shape-circle" style="color: #c061cb; width: 9px; height: 9px; float: left;
+                     margin-right: 10px; display: flex;justify-content: center; align-items: center;"></i>
+                        <%= entry.getValue().getValue() %></td>
                     <td><%= entry.getValue().getDate() %></td>
                     <td><%= entry.getValue().getStatus() %></td>
                     <td><%= entry.getValue().getPriority() %></td>
-                    <td><%= entry.getValue().getTags().toString() %></td>
+                    <td><span style="color:#437CF5"><%= entry.getValue().showTags() %></span></td>
                     <td>
                         <div class="dropdown">
                             <button class="dropbtn"><i class="gg-more-o"></i></button>
@@ -57,7 +61,7 @@
         <div class="completed">
         <label>Completed <label id="inactive">Inactive</label></label>
         </div>
-        <div class="tablecompleted">
+        <div class="table-completed">
             <table>
                 <thead>
                 <tr>
@@ -73,11 +77,13 @@
                 <% Map<String, Item> completed = (Map<String, Item>) request.getAttribute("completed");
                     for(Map.Entry<String, Item> entrycom : completed.entrySet()){ %>
                 <tr>
-                    <td><%= entrycom.getValue().getValue() %></td>
+                    <td><i class="gg-shape-circle" style="color: #c061cb; width: 9px; height: 9px; float: left;
+                     margin-right: 10px; display: flex;justify-content: center; align-items: center;"></i>
+                        <%= entrycom.getValue().getValue() %></td>
                     <td><%= entrycom.getValue().getDate() %></td>
                     <td><%= entrycom.getValue().getStatus() %></td>
                     <td><%= entrycom.getValue().getPriority() %></td>
-                    <td><%= entrycom.getValue().getTags().toString() %></td>
+                    <td><span style="color:#437CF5"><%= entrycom.getValue().showTags() %></span></td>
                     <td>
                         <div class="dropdown">
                             <button class="dropbtn"><i class="gg-more-o"></i></button>

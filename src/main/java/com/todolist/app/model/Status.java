@@ -20,5 +20,11 @@ public enum Status {
     /**
      * This status means that the task is in a queue
      */
-    PENDING
+    PENDING;
+
+    @Override
+    public String toString() {
+        String str = name().toLowerCase().substring(0, 1).toUpperCase() + name().toLowerCase().substring(1);
+        return str;
+    }
 }

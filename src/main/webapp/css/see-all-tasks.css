@@ -15,11 +15,11 @@ body{
 
 }
 
-.seeall{
+.see-all{
     padding: 50px 0;
 }
 
-.seeall form{
+.see-all form{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,14 +34,15 @@ body{
     overflow: auto;
 }
 
-.seeall form h2{
+.see-all form h2{
     font-weight: bold;
     margin-bottom: 20px;
-    font-size: 26px;
+    font-size: 28px;
     padding-bottom: 25px;
+    font-weight: bold;
 }
 
-.seeall .incompleted label{
+.see-all .incompleted label{
     margin-top: 20px;
     font-size: 17px;
     color: black;
@@ -49,7 +50,7 @@ body{
     padding-left: 15px;
 }
 
-.seeall .button{
+.see-all .button{
     font-size: 14px;
     background-color: limegreen;
     color: white;
@@ -63,31 +64,31 @@ body{
 }
 
 
-.seeall .button:hover {
+.see-all .button:hover {
     background-color: forestgreen;
     color: white;
     transition: 0.7s;
 }
 
-.seeall .button:active {
+.see-all .button:active {
     box-shadow: 0px 0px 2px 2px black;
 }
 
-.seeall .tableincompleted{
+.see-all .table-incompleted{
     height: 200px;
     overflow: auto;
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
-.seeall .tableincompleted table{
+.see-all .table-incompleted table{
     width: 80%;
     table-layout: fixed;
     min-width: 900px;
     border-collapse: collapse;
 }
 
-.tableincompleted thead th{
+.table-incompleted thead th{
     position: sticky;
     margin-top: 20px;
     background-color: #f6f9fc;
@@ -95,7 +96,7 @@ body{
     font-size: 15px;
 }
 
-.tableincompleted th,td{
+.table-incompleted th,td{
     border-bottom: 1px solid #dddddd;
     padding: 10px 20px;
     word-break: break-all;
@@ -103,7 +104,7 @@ body{
     font-size: 13px;
 }
 
-.seeall .completed label{
+.see-all .completed label{
     margin-top: 20px;
     font-size: 17px;
     color: black;
@@ -111,7 +112,7 @@ body{
     padding-left: 15px;
 }
 
-.seeall .completed label #inactive{
+.see-all .completed label #inactive{
     margin-left: 10px;
     font-size: 10px;
     color: red;
@@ -121,21 +122,21 @@ body{
     border-radius: 10px;
 }
 
-.seeall .tablecompleted{
+.see-all .table-completed{
     height: 200px;
     overflow: auto;
     margin-top: 20px;
     opacity: 0.3;
 }
 
-.seeall .tablecompleted table{
+.see-all .table-completed table{
     width: 80%;
     table-layout: fixed;
     min-width: 900px;
     border-collapse: collapse;
 }
 
-.tablecompleted thead th{
+.table-completed thead th{
     position: sticky;
     margin-top: 20px;
     background-color: #f6f9fc;
@@ -143,7 +144,7 @@ body{
     font-size: 15px;
 }
 
-.tablecompleted th,td{
+.table-completed th,td{
     border-bottom: 1px solid #dddddd;
     padding: 10px 20px;
     word-break: break-all;
@@ -151,12 +152,12 @@ body{
     font-size: 13px;
 }
 
-.tablecompleted button{
+.table-completed button{
     border: none;
     background-color: white;
 }
 
-.tablecompleted button:hover{
+.table-completed button:hover{
     background-color: #9a9996;
 }
 
@@ -171,7 +172,6 @@ body{
 }
 
 .dropdown-content {
-
     display: none;
     position: absolute;
     background-color: #f1f1f1;
