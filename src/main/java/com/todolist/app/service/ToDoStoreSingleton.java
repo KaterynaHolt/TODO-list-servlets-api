@@ -35,7 +35,7 @@ public class ToDoStoreSingleton implements Store {
     /**
      * This method adds some tasks at the beginning
      */
-    public void initializeMockData(){
+    private void initializeMockData(){
         List<Tag> tags1 = new ArrayList<>();
         tags1.add(Tag.WORK);
         tags1.add(Tag.READING);

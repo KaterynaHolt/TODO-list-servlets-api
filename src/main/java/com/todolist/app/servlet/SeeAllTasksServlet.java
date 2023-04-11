@@ -41,7 +41,7 @@ public class SeeAllTasksServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter(ToDoListAppConstants.getAddOperation()) != null){
+        if(request.getParameter(ToDoListAppConstants.ADD_OPERATION) != null){
             response.sendRedirect(request.getContextPath() + "/new-task");
         }
     }
