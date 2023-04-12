@@ -104,6 +104,17 @@ body{
     font-size: 13px;
 }
 
+.table-incompleted .gg-shape-circle{
+    color: #c061cb;
+    width: 9px;
+    height: 9px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .see-all .completed label{
     margin-top: 20px;
     font-size: 17px;
@@ -150,6 +161,17 @@ body{
     word-break: break-all;
     text-align: center;
     font-size: 13px;
+}
+
+.table-completed .gg-shape-circle{
+    color: #c061cb;
+    width: 9px;
+    height: 9px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .table-completed button{

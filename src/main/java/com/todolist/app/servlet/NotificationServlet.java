@@ -2,6 +2,7 @@ package com.todolist.app.servlet;
 
 
 import com.todolist.app.model.Item;
+import com.todolist.app.model.ToDoListAppConstants;
 import com.todolist.app.service.ToDoStoreSingleton;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -25,5 +26,12 @@ public class NotificationServlet extends HttpServlet {
         request.setAttribute("operation", operation);
         request.setAttribute("result", foundElement);
         request.getRequestDispatcher("/jsp/notification.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getParameter(ToDoListAppConstants.RETURN_OPERATION) != null){
+            response.sendRedirect(request.getContextPath() + "/see-all-tasks");
+        }
     }
 }
