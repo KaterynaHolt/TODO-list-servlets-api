@@ -1,10 +1,7 @@
 package com.todolist.app.servlet;
 
 
-import com.todolist.app.model.Item;
-import com.todolist.app.model.Priority;
-import com.todolist.app.model.Status;
-import com.todolist.app.model.Tag;
+import com.todolist.app.model.*;
 import com.todolist.app.service.ToDoStoreSingleton;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -25,8 +22,13 @@ public class NewTaskServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ToDoStoreSingleton singleton = ToDoStoreSingleton.getInstance();
-        String uuid = singleton.addItem(getItem(request));
-        response.sendRedirect(request.getContextPath() + "/notification/?operation=ADD&id=" + uuid);
+        if(request.getParameter(ToDoListAppConstants.ADD_OPERATION) != null){
+            String uuid = singleton.addItem(getItem(request));
+            response.sendRedirect(request.getContextPath() + "/notification?operation=ADD&id=" + uuid);
+        }
+        else{
+            response.sendRedirect(request.getContextPath() + "/see-all-tasks");
+        }
     }
 
     /**

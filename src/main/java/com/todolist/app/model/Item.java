@@ -60,6 +60,15 @@ public class Item {
         this.date = date;
     }
 
+
+    public String showTags(){
+        String str = "";
+        for(Tag t : tags){
+            str = str + "#" + t + "  ";
+        }
+        return str;
+    }
+
     @Override
     public String toString(){
         return value + ", " + date + ", " + status + ", " + priority + ", " + tags.toString();
