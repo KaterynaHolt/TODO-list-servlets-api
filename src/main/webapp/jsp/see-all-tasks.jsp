@@ -40,12 +40,11 @@
                     <td><span style="color:#437CF5"><%= entry.getValue().showTags() %></span></td>
                     <td>
                         <div class="dropdown">
-                            <button class="dropbtn"><i class="gg-more-o"></i></button>
+                            <button class="dropbtn" disabled="disabled"><i class="gg-more-o"></i></button>
                             <div class="dropdown-content">
                                 <a href="<%= request.getContextPath() %>/notification?operation=COMPLETE&id=
 <%=entry.getKey()%>">Complete</a>
-                                <a href="<%= request.getContextPath() %>/notification?operation=EDIT&id=
-<%=entry.getKey()%>">Edit</a>
+                                <a href="<%= request.getContextPath() %>/edit-task?id=<%=entry.getKey()%>">Edit</a>
                                 <a href="<%= request.getContextPath() %>/notification?operation=REMOVE&id=
 <%=entry.getKey()%>">Remove</a>
                             </div>
@@ -82,7 +81,7 @@
                     <td><span style="color:#437CF5"><%= entrycom.getValue().showTags() %></span></td>
                     <td>
                         <div class="dropdown">
-                            <button class="dropbtn"><i class="gg-more-o"></i></button>
+                            <button class="dropbtn" disabled="disabled"><i class="gg-more-o"></i></button>
                             <div class="dropdown-content">
                                 <a href="<%= request.getContextPath() %>/notification?operation=INCOMPLETE&id=
 <%=entrycom.getKey()%>">Incomplete</a>

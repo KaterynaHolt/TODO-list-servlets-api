@@ -4,8 +4,6 @@ package com.todolist.app.service;
 import com.todolist.app.model.Item;
 import com.todolist.app.model.Status;
 
-import java.util.UUID;
-
 
 public interface Store {
     /**
@@ -16,19 +14,21 @@ public interface Store {
 
     /**
      * This method changes status of task
-     * @param number - it's a number of task in map
+     * @param id - it's an id of task in map
      * @param st - it's a new status for task
      */
-    void changeStatus(int number, Status st);
+    void changeStatus(String id, Status st);
+
+    /**
+     * This method changes information about task in the todo list
+     * @param id - id of task in the list
+     * @param item - changed task in the list
+     */
+    void changeItem(String id, Item item);
 
     /**
      * This method removed a task from todo list
-     * @param number - it's a number of task in map
+     * @param id - id of task in the list
      */
-    void removeItem(int number);
-
-    /**
-     * This method select items from todo list and prints it
-     */
-    void printAll();
+    void removeItem(String id);
 }
