@@ -33,9 +33,7 @@
                 <% Map<String, Item> onhold = (Map<String, Item>) request.getAttribute("onhold");
                 for(Map.Entry<String, Item> entry : onhold.entrySet()){ %>
                 <tr>
-                    <td><i class="gg-shape-circle" style="color: #c061cb; width: 9px; height: 9px; float: left;
-                     margin-right: 10px; display: flex;justify-content: center; align-items: center;"></i>
-                        <%= entry.getValue().getValue() %></td>
+                    <td><i class="gg-shape-circle"></i><%= entry.getValue().getValue() %></td>
                     <td><%= entry.getValue().getDate() %></td>
                     <td><%= entry.getValue().getStatus() %></td>
                     <td><%= entry.getValue().getPriority() %></td>
@@ -77,9 +75,7 @@
                 <% Map<String, Item> completed = (Map<String, Item>) request.getAttribute("completed");
                     for(Map.Entry<String, Item> entrycom : completed.entrySet()){ %>
                 <tr>
-                    <td><i class="gg-shape-circle" style="color: #c061cb; width: 9px; height: 9px; float: left;
-                     margin-right: 10px; display: flex;justify-content: center; align-items: center;"></i>
-                        <%= entrycom.getValue().getValue() %></td>
+                    <td><i class="gg-shape-circle"></i><%= entrycom.getValue().getValue() %></td>
                     <td><%= entrycom.getValue().getDate() %></td>
                     <td><%= entrycom.getValue().getStatus() %></td>
                     <td><%= entrycom.getValue().getPriority() %></td>
