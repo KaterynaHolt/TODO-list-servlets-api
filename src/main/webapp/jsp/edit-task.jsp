@@ -1,3 +1,5 @@
+<%@ page import="com.todolist.app.model.Item" %>
+<%@ page import="com.todolist.app.model.Tag" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,25 +13,27 @@
 </head>
 <body>
 <div class="edittask">
-    <%String uuid = (String) request.getAttribute("uuid");
+    <% Item item = (Item) request.getAttribute("item");
+        String uuid = (String) request.getAttribute("uuid");
         session.setAttribute("uuid", String.valueOf(uuid));%>
     <form action="<%= request.getContextPath() %>/edit-task" method="post">
         <h2 class="main-text">Edit task</h2>
         <div class="form-group">
             <label class="text">Text <br>
-                <input type="text" class="textbox" name="text" value="  "/>
+                <input type="text" class="textbox" name="text" value="<%= "  " + item.getValue().trim()%>" />
             </label>
         </div>
         <div class="form-group">
             <label class="text">Due date <br>
-                <input type="date" class="textbox" name="date"/>
+                <input type="date" class="textbox" name="date" value="<%=item.getDate()%>" />
             </label>
         </div>
         <div class="form-group">
             <label class="text">Status</label> <br>
             <select class="select" name="status">
-                <option> </option>
-                <option value="INPROGRESS">In progress</option>
+                <option value="<%= item.getStatus().toString().toUpperCase(java.util.Locale.ROOT)%>"
+                        hidden="hidden"><%= item.getStatus()%></option>
+                <option value="INPROGRESS">Inprogress</option>
                 <option value="PENDING">Pending</option>
                 <option value="COMPLETED">Completed</option>
                 <option value="INCOMPLETED">Incompleted</option>
@@ -38,7 +42,8 @@
         <div class="form-group">
             <label class="text-priority">Priority</label> <br>
             <select class="select" name="priority">
-                <option> </option>
+                <option value="<%= item.getPriority().toString().toUpperCase(java.util.Locale.ROOT)%>"
+                        hidden="hidden"><%= item.getPriority()%></option>
                 <option value="MINOR">Minor</option>
                 <option value="CRITICAL">Critical</option>
                 <option value="NORMAL">Normal</option>
@@ -47,11 +52,15 @@
         <div class="form-group">
             <label class="text">Tags</label> <br>
             <select class="select-mult" name="tags" multiple="true">
-                <option> </option>
-                <option value="DAILYROUTINE">Daily routine</option>
-                <option value="HOME">Home</option>
-                <option value="WORK">Work</option>
-                <option value="READING">Reading</option>
+                <%  Tag[] tags = Tag.values();
+                    for(Tag t : tags){
+                        if(item.getTags().contains(t)){ %>
+                    <option value="<%= t.toString().toUpperCase(java.util.Locale.ROOT)%>" selected><%= t%></option>
+                    <% }
+                        else { %>
+                    <option value="<%= t.toString().toUpperCase(java.util.Locale.ROOT)%>"><%= t%></option>
+                    <% }
+                    } %>
             </select>
         </div>
         <div class="form-group">

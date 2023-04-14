@@ -39,15 +39,15 @@ public class ToDoStoreSingleton implements Store {
         List<Tag> tags1 = new ArrayList<>();
         tags1.add(Tag.WORK);
         tags1.add(Tag.READING);
-        items.put(getUuid(), new Item("Task 1", "10.04.2023", Status.INPROGRESS, Priority.NORMAL, tags1));
+        items.put(getUuid(), new Item("Task 1", "2023-04-10", Status.INPROGRESS, Priority.NORMAL, tags1));
         List<Tag> tags2 = new ArrayList<>();
         tags2.add(Tag.DAILYROUTINE);
-        items.put(getUuid(), new Item("Task 2", "10.04.2023", Status.PENDING, Priority.MINOR, tags2));
+        items.put(getUuid(), new Item("Task 2", "2023-04-10", Status.PENDING, Priority.MINOR, tags2));
         List<Tag> tags3 = new ArrayList<>();
         tags3.add(Tag.DAILYROUTINE);
         tags3.add(Tag.HOME);
         tags3.add(Tag.READING);
-        items.put(getUuid(), new Item("Task 3", "10.04.2023", Status.COMPLETED, Priority.CRITICAL, tags3));
+        items.put(getUuid(), new Item("Task 3", "2023-04-10", Status.COMPLETED, Priority.CRITICAL, tags3));
     }
 
     /**

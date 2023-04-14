@@ -17,6 +17,7 @@ public class EditTaskServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uuid = request.getParameter("id");
+        request.setAttribute("item", singleton.getItems().get(uuid));
         request.setAttribute("uuid", uuid);
         request.getRequestDispatcher("/jsp/edit-task.jsp").forward(request, response);
     }
