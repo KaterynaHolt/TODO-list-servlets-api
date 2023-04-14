@@ -11,6 +11,8 @@
 </head>
 <body>
 <div class="edittask">
+    <%String uuid = (String) request.getAttribute("uuid");
+        session.setAttribute("uuid", String.valueOf(uuid));%>
     <form action="<%= request.getContextPath() %>/edit-task" method="post">
         <h2 class="main-text">Edit task</h2>
         <div class="form-group">

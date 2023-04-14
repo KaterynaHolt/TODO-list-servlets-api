@@ -13,17 +13,20 @@ import java.util.List;
 public class EditTaskServlet extends HttpServlet {
 
     ToDoStoreSingleton singleton = ToDoStoreSingleton.getInstance();
-    String uuid = "";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String uuid = request.getParameter("id");
+        request.setAttribute("uuid", uuid);
         request.getRequestDispatcher("/jsp/edit-task.jsp").forward(request, response);
-        uuid = request.getParameter("id");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String uuid = (String) session.getAttribute("uuid");
         if(request.getParameter(ToDoListAppConstants.EDIT_OPERATION) != null){
+
             singleton.changeItem(uuid, getItem(request));
             response.sendRedirect(request.getContextPath() + "/notification?operation=EDIT&id=" + uuid);
         }
