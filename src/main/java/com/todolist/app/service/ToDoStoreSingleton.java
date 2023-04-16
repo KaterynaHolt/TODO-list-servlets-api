@@ -39,15 +39,15 @@ public class ToDoStoreSingleton implements Store {
         List<Tag> tags1 = new ArrayList<>();
         tags1.add(Tag.WORK);
         tags1.add(Tag.READING);
-        items.put(getUuid(), new Item("Task 1", "10.04.2023", Status.INPROGRESS, Priority.NORMAL, tags1));
+        items.put(getUuid(), new Item("Task 1", "2023-04-10", Status.INPROGRESS, Priority.NORMAL, tags1));
         List<Tag> tags2 = new ArrayList<>();
         tags2.add(Tag.DAILYROUTINE);
-        items.put(getUuid(), new Item("Task 2", "10.04.2023", Status.PENDING, Priority.MINOR, tags2));
+        items.put(getUuid(), new Item("Task 2", "2023-04-10", Status.PENDING, Priority.MINOR, tags2));
         List<Tag> tags3 = new ArrayList<>();
         tags3.add(Tag.DAILYROUTINE);
         tags3.add(Tag.HOME);
         tags3.add(Tag.READING);
-        items.put(getUuid(), new Item("Task 3", "10.04.2023", Status.COMPLETED, Priority.CRITICAL, tags3));
+        items.put(getUuid(), new Item("Task 3", "2023-04-10", Status.COMPLETED, Priority.CRITICAL, tags3));
     }
 
     /**
@@ -62,39 +62,33 @@ public class ToDoStoreSingleton implements Store {
 
     /**
      * This method changes status of task
-     * @param number - it's a number of task in map
+     * @param id - id of task in the list
      * @param st - it's a new status for task
      */
-    public synchronized void changeStatus(int number, Status st){
-        String key = (String) items.keySet().toArray()[number - 1];
-        Item value = items.get(key);
+    public synchronized void changeStatus(String id, Status st){
+        Item value = items.get(id);
         value.setStatus(st);
     }
 
     /**
-     * This method removed a task from todo list
-     * @param number - it's a number of task in map
+     * This method changes information about task in the todo list
+     * @param id - id of task in the list
+     * @param item - changed task in the list
      */
-    public synchronized void removeItem(int number){
-        String key = (String) items.keySet().toArray()[number - 1];
-        items.remove(key);
+    public synchronized void changeItem(String id, Item item){
+        Item value = items.get(id);
+        value.setValue(item.getValue());
+        value.setDate(item.getDate());
+        value.setStatus(item.getStatus());
+        value.setPriority(item.getPriority());
+        value.setTags(item.getTags());
     }
 
     /**
-     * This method select items from todo list and prints it
+     * This method removed a task from todo list
+     * @param id - id of task in the list
      */
-    public synchronized void printAll(){
-        Formatter fm = new Formatter();
-        int i = 1;
-        System.out.println("=========TO DO LIST=============");
-        System.out.println("|#  |    Title   |   Status   |");
-        for(Map.Entry<String, Item> tasks : items.entrySet()){
-            fm.format("%1s%1s%1s%11s%1s%11s%1s\n", "|", i, ". |", tasks.getValue().getValue(),
-                    " |", tasks.getValue().getStatus(), " |");
-            i++;
-        }
-        System.out.println(fm.toString().trim());
-        System.out.println("================================");
-        fm.close();
+    public synchronized void removeItem(String id){
+        items.remove(id);
     }
 }

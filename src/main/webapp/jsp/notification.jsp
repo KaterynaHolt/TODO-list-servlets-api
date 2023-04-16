@@ -22,7 +22,7 @@
         <p> Task - was <%= operation %></p>
         <%  }
         else{ %>
-        <p> No task has been found. Check your logs </p>
+        <p> No task has been found.Maybe it was removed. Check your logs </p>
         <% } %>
         <button class="button" type="submit" name="RETURN">Return</button>
     </form>

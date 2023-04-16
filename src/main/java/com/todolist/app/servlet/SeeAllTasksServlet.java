@@ -9,9 +9,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 
 @WebServlet(name = "SeeAllTasksServlet", value = "/see-all-tasks")

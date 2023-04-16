@@ -60,6 +60,12 @@ public class Item {
         this.date = date;
     }
 
+    public void setTags(List<Tag> tags){
+        this.tags.clear();
+        for(Tag t : tags){
+            this.tags.add(t);
+        }
+    }
 
     public String showTags(){
         String str = "";
@@ -71,6 +77,7 @@ public class Item {
 
     @Override
     public String toString(){
-        return value + ", " + date + ", " + status + ", " + priority + ", " + tags.toString();
+        return value + ", " + date + ", " + status + ", " + priority + ", "
+                + tags.toString();
     }
 }
