@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
     <script type="text/javascript" src="<%= request.getContextPath() %>/js/newtask.js"></script>
+    <script type="text/javascript" src="<%= request.getContextPath() %>/js/edittask.js"></script>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/new-task.css">
 </head>
 <body>
 <div class="newtask">
-    <form action="<%= request.getContextPath() %>/new-task" method="post">
+    <form name="form" action="<%= request.getContextPath() %>/new-task" method="post">
         <h2 class="main-text">New task</h2>
         <div class="form-group">
             <label class="text">Text <br>
@@ -55,7 +56,7 @@
             </select>
         </div>
         <div class="form-group">
-            <button class="add" type="submit" name="ADD">Add</button>
+            <button class="add" type="submit" name="ADD" onclick="return validateForm()">Add</button>
             <button class="cancel" type="submit" name="CANCEL">Cancel</button>
         </div>
     </form>

@@ -27,11 +27,11 @@ public class EditTaskServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String uuid = (String) session.getAttribute("uuid");
         if(request.getParameter(ToDoListAppConstants.EDIT_OPERATION) != null){
-
             singleton.changeItem(uuid, getItem(request));
-            response.sendRedirect(request.getContextPath() + "/notification?operation=EDIT&id=" + uuid);
+            response.sendRedirect(request.getContextPath() + "/notification?operation="
+                    + ToDoListAppConstants.EDIT_OPERATION + "&id=" + uuid);
         }
-        else{
+        else {
             response.sendRedirect(request.getContextPath() + "/see-all-tasks");
         }
     }

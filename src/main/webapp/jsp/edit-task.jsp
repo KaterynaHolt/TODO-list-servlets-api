@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
     <script type="text/javascript" src="<%= request.getContextPath() %>/js/newtask.js"></script>
+    <script type="text/javascript" src="<%= request.getContextPath() %>/js/edittask.js"></script>
 </head>
 <body>
 <div class="edittask">
     <% Item item = (Item) request.getAttribute("item");
         String uuid = (String) request.getAttribute("uuid");
         session.setAttribute("uuid", String.valueOf(uuid));%>
-    <form action="<%= request.getContextPath() %>/edit-task" method="post">
+    <form name="form" action="<%= request.getContextPath() %>/edit-task" method="post">
         <h2 class="main-text">Edit task</h2>
         <div class="form-group">
             <label class="text">Text <br>
@@ -64,7 +65,7 @@
             </select>
         </div>
         <div class="form-group">
-            <button class="edit" type="submit" name="EDIT">Edit</button>
+            <button class="edit" type="submit" name="EDIT" onclick="return validateForm()" >Edit</button>
             <button class="cancel" type="submit" name="CANCEL">Cancel</button>
         </div>
     </form>
