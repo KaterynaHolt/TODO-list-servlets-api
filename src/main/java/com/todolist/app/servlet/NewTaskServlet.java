@@ -24,7 +24,8 @@ public class NewTaskServlet extends HttpServlet {
         ToDoStoreSingleton singleton = ToDoStoreSingleton.getInstance();
         if(request.getParameter(ToDoListAppConstants.ADD_OPERATION) != null){
             String uuid = singleton.addItem(getItem(request));
-            response.sendRedirect(request.getContextPath() + "/notification?operation=ADD&id=" + uuid);
+            response.sendRedirect(request.getContextPath() + "/notification?operation="
+                    + ToDoListAppConstants.ADD_OPERATION + "&id=" + uuid);
         }
         else{
             response.sendRedirect(request.getContextPath() + "/see-all-tasks");
