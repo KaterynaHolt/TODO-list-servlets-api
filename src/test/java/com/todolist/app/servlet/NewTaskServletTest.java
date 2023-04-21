@@ -1,10 +1,5 @@
 package com.todolist.app.servlet;
 
-import com.todolist.app.model.Item;
-import com.todolist.app.model.Priority;
-import com.todolist.app.model.Status;
-import com.todolist.app.model.Tag;
-import com.todolist.app.service.ToDoStoreSingleton;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -15,15 +10,16 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
+
 import java.io.IOException;
-import java.util.*;
+import java.util.UUID;
 
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
 
-
-public class EditTaskServletTest {
+public class NewTaskServletTest {
     @Spy
-    private EditTaskServlet servlet;
+    private NewTaskServlet servlet;
     @Mock
     private HttpServletRequest request;
     @Mock
@@ -36,23 +32,16 @@ public class EditTaskServletTest {
     }
 
     /**
-     * This method tests doGet method of EditTaskServlet
+     * This method tests doGet method of NewTaskServlet
      * @throws ServletException
      * @throws IOException
      */
     @Test
     public void test_doGet_method() throws ServletException, IOException {
-        //GIVEN
-        String uuid = UUID.randomUUID().toString();
         //WHEN
-        when(request.getParameter("id")).thenReturn(uuid);
-        when(request.getRequestDispatcher("/jsp/edit-task.jsp")).thenReturn(rd);
-        doNothing().when(request).setAttribute("uuid", uuid);
-
+        when(request.getRequestDispatcher("/jsp/new-task.jsp")).thenReturn(rd);
         servlet.doGet(request, response);
         //THEN
-        verify(request).getParameter("id");
-        verify(request).setAttribute("uuid", uuid);
         verify(rd).forward(request, response);
     }
 }

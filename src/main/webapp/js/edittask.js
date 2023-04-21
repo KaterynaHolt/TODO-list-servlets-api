@@ -4,8 +4,27 @@ function validateForm() {
     var status = document.forms["form"]["status"].value;
     var priority = document.forms["form"]["priority"].value;
     var tags = document.forms["form"]["tags"].value;
-    if ((status == "") || (priority == "") || (tags == "") || (text == "") || (text == "  ") || (date == "") ) {
-        alert("You haven't filled all fields!");
+    const warnings = [];
+    if (text == "" || text == "  "){
+        warnings.push(" Text");
+    }
+    if (date == "") {
+        warnings.push(" Date");
+    }
+    if (status == "") {
+        warnings.push(" Status");
+    }
+    if (priority == ""){
+        warnings.push(" Priority");
+    }
+    if (tags == ""){
+        warnings.push(" Tags");
+    }
+    if (warnings.length != 0){
+        alert("You haven't filled" + warnings.toString() + " fields!");
         return false;
+    }
+    else{
+        return true;
     }
 }

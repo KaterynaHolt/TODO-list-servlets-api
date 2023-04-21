@@ -23,6 +23,7 @@
     <junit.jupiter.version>5.9.1</junit.jupiter.version>
     <assertj.version>3.23.1</assertj.version>
     <log4j.version>2.20.0</log4j.version>
+    <h2.version>2.1.214</h2.version>
   </properties>
 
   <dependencies>
@@ -71,6 +72,11 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-web</artifactId>
       <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2.version}</version>
     </dependency>
   </dependencies>
 
