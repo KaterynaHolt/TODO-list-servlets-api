@@ -12,6 +12,22 @@ ___
 
 ___
 
+### Tech Stack
+
+___
+
+- Java 11
+- Servlet API
+- JSP
+- Maven
+- JavaScript
+- HTML
+- CSS
+- JUnit
+- Mockito 
+
+___
+
 ### Functionality
 
 ___
